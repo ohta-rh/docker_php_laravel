@@ -2,7 +2,7 @@ version: '2'
 
 services:
   db:
-    build: server/docker/mysql
+    build: docker/mysql
     volumes:
       - ./data/mysql:/var/lib/mysql
     environment:
@@ -13,9 +13,9 @@ services:
     container_name: db
   php:
     build:
-      context: server/docker/php
+      context: docker/php
     volumes:
-      - "${PWD}/app:/var/www/html"
+      - ./app:/var/www/html
       - ./docker/php/conf/default.conf:/etc/apache2/sites-available/000-default.conf
     ports:
       - "80:80"
