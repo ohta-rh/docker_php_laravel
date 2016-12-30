@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  db:
+    build: server/docker/mysql
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: ""
+      MYSQL_USER: root
+      MYSQL_DB: ""
+    container_name: db
+  php:
+    build:
+      context: server/docker/php
+    volumes:
+      - "${PWD}/app:/var/www/html"
+      - ./docker/php/conf/default.conf:/etc/apache2/sites-available/000-default.conf
+    ports:
+      - "80:80"
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+    links:
+      - db
+    container_name: php
