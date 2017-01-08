@@ -9,5 +9,6 @@ dependencies:
     - pip install docker-compose
 
 test:
-  - docker-compose up -d
-  - docker-compose run php ls
+  pre:
+    - docker-compose up -d
+    - docker-compose run php ls
