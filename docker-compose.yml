@@ -12,8 +12,7 @@ services:
       MYSQL_DB: ""
     container_name: db
   php:
-    build:
-      context: docker/php
+    build: docker/php
     volumes:
       - ./app:/var/www/html
       - ./docker/php/conf/default.conf:/etc/apache2/sites-available/000-default.conf
