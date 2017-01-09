@@ -12,4 +12,5 @@ test:
   pre:
     - docker-compose --version
     - docker-compose up -d
-    - docker-compose run php ls
+    - docker-compose run php composer-install
+    - docker-compose run php ./vendor/bin/phpunit
