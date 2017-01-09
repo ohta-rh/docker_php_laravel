@@ -13,6 +13,6 @@ test:
     - curl https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
     - docker-compose --version
   override:
-    - docker-compose exec laravel ls
-    - docker-compose exec laravel ls vendor/bin/
-    - docker-compose exec laravel ./vendor/bin/phpunit
+    - docker exec -it $(docker-compose ps -q laravel) ls
+    - docker exec -it $(docker-compose ps -q laravel) ls vendor/bin/
+    - docker exec -it $(docker-compose ps -q laravel) ./vendor/bin/phpunit
