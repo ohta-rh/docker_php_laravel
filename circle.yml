@@ -14,4 +14,4 @@ test:
     - docker-compose up -d
   override:
     - docker-compose run php ls
-    - docker-compose run php vendor/bin/phpunit
+    - docker-compose run php ./vendor/bin/phpunit
