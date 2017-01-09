@@ -12,5 +12,6 @@ test:
   pre:
     - docker-compose --version
     - docker-compose up -d
+  override:
     - docker-compose run php composer-install
     - docker-compose run php ./vendor/bin/phpunit
