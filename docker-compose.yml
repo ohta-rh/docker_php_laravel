@@ -8,7 +8,8 @@ db:
     MYSQL_USER: root
     MYSQL_DB: ""
   container_name: db
-php:
+
+laravel:
   build: docker/php
   volumes:
     - ./app:/var/www/html
@@ -20,4 +21,4 @@ php:
     DB_PORT: 5432
   links:
     - db
-  container_name: web_app
+  container_name: laravel

@@ -13,5 +13,5 @@ test:
     - curl https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
     - docker-compose --version
   override:
-    - docker-compose run web_app ls
-    - docker-compose run web_app ./vendor/bin/phpunit
+    - docker-compose run laravel ls
+    - docker-compose run laravel ./vendor/bin/phpunit
