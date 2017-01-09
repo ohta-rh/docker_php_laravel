@@ -7,7 +7,6 @@ machine:
 
 dependencies:
   override:
-    - composer install --prefer-source --no-interaction --dev
     - docker-compose up -d
 test:
   pre:
