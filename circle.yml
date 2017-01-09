@@ -10,8 +10,8 @@ dependencies:
     - docker-compose up -d
 test:
   pre:
+    - curl https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
     - docker-compose --version
-    - docker-compose up -d
   override:
     - docker-compose run php ls
     - docker-compose run php ./vendor/bin/phpunit
