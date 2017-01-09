@@ -20,4 +20,4 @@ php:
     DB_PORT: 5432
   links:
     - db
-  container_name: php
+  container_name: web_app
