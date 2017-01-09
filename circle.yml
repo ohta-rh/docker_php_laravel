@@ -14,4 +14,5 @@ test:
     - docker-compose --version
   override:
     - docker-compose run laravel ls
+    - docker-compose run laravel ls vendor/bin/
     - docker-compose run laravel ./vendor/bin/phpunit
